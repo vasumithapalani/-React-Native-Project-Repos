@@ -22,6 +22,7 @@ const BottomTabNav=()=> {
     <Tab.Navigator 
     initialRouteName="Dashboard"
     barStyle={{ backgroundColor: 'lightskyblue' }}
+
     >
       <Tab.Screen name="Dashboard" component={DashboardTab}  
         options={{
