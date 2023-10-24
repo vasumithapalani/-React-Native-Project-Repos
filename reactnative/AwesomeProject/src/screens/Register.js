@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { View, Text,TextInput,StyleSheet,TouchableOpacity,Button,ImageBackground} from 'react-native'
-import {LOGIN_PAGE} from '../constant/Navigation';
+import {LOGIN_PAGE, MY_TABS} from '../constant/Navigation';
 
 const Register = ({ route, navigation }) => {
 
@@ -56,9 +56,9 @@ const submitFunc=()=>{
   </View>
  
  <View>
- <Button title="Go to Login Page" style={styles.cont} onPress={() => navigation.navigate(LOGIN_PAGE)}/>
  <Text>Initial param: itemId - {id}</Text>
   </View>
+
   </View>
   </ImageBackground>
     

@@ -47,9 +47,7 @@ const submitFunc=()=>{
   <TouchableOpacity style={styles.loginbutton} onPress={submitFunc}><Text style={styles.loginbuttontext}>Log In</Text></TouchableOpacity>
   </View>
     
-  <View>
-   <Button title="Go to Registration Page" style={styles.cont} onPress={() => navigation.navigate(REGISTRATION_PAGE,{name:'Registration'})}/>
-   </View>
+  
     </View>
 
     </ImageBackground>
