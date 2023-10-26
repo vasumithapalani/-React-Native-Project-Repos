@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text,TextInput,StyleSheet,TouchableOpacity,Button,ImageBackground} from 'react-native'
+import { View, Text,TextInput,StyleSheet,TouchableOpacity,Button,ImageBackground,ActivityIndicator} from 'react-native'
 
 
 const DashboardTab=()=>{
@@ -12,3 +12,8 @@ const DashboardTab=()=>{
 }
 
 export default DashboardTab;
+
+/*
+ <ActivityIndicator  size="large" color="blue"/>
+
+*/

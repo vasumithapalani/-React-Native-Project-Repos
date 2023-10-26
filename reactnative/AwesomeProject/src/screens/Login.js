@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { View, Text,TextInput,StyleSheet,TouchableOpacity,Button,ImageBackground} from 'react-native'
+import { View, Text,TextInput,StyleSheet,TouchableOpacity,Button,ImageBackground,TouchableWithoutFeedback,TouchableHighlight} from 'react-native'
 import {REGISTRATION_PAGE} from '../constant/Navigation';
 
 
@@ -26,7 +26,7 @@ const submitFunc=()=>{
 
   return (
     <View style={styles.container1}>
-      <ImageBackground source={require('../../img1.jpg')}>
+      <ImageBackground source={require('../../img1.jpg')} resizeMode="cover">
        <View style={styles.container2}>
 
         <Text style={styles.title}>Welcome Back</Text>
@@ -55,6 +55,13 @@ const submitFunc=()=>{
     
   )
 }
+
+/*
+<TouchableOpacity style={styles.loginbutton} onPress={submitFunc}><Text style={styles.loginbuttontext}>Log In</Text></TouchableOpacity>
+<TouchableHighlight style={styles.loginbutton} onPress={submitFunc}><Text style={styles.loginbuttontext}>Log In</Text></TouchableHighlight>
+<TouchableWithoutFeedback style={styles.loginbutton} onPress={submitFunc}><Text style={styles.loginbuttontext}>Log In</Text></TouchableWithoutFeedback>
+
+*/ 
 
 const styles = StyleSheet.create({
 

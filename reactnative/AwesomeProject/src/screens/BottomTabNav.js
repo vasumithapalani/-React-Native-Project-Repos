@@ -8,9 +8,9 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 
 
-import DashboardTab from 'E:/Vasumitha_Git Uploads/-React-Native-Project-Repos/reactnative/AwesomeProject/src/screens/DashboardTab.js'
-import ProfileTab from 'E:/Vasumitha_Git Uploads/-React-Native-Project-Repos/reactnative/AwesomeProject/src/screens/ProfileTab.js'
-import SettingsTab from 'E:/Vasumitha_Git Uploads/-React-Native-Project-Repos/reactnative/AwesomeProject/src/screens/SettingsTab.js'
+import DashboardTab from '../screens/DashboardTab'
+import ProfileTab from '../screens/ProfileTab'
+import SettingsTab from '../screens/SettingsTab'
 
 //const Tab = createBottomTabNavigator();
 
