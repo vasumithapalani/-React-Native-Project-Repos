@@ -6,7 +6,10 @@ import {BOTTOM_TABS} from '../constant/Navigation';
 
 
 
-const Home=({navigation})=>{
+const Home=({route,navigation})=>{
+
+    const { username } = route.params || {};
+
 
     return(
      <View style={styles.container}>
@@ -14,12 +17,16 @@ const Home=({navigation})=>{
        <Button title="Go to Login Page" onPress={() => navigation.navigate(LOGIN_PAGE)}/>
        </View>
 
-      <View>
+       <View>
        <Button title="Go to Registration Page" onPress={() => navigation.navigate(REGISTRATION_PAGE)}/>
       </View>
 
       <View>
       <Button title="Go to Dashboard" style={styles.cont} onPress={() => navigation.navigate(BOTTOM_TABS)}/>
+      </View>
+
+      <View>
+          <Text> Welcome, {username}! </Text>
       </View>
 
 

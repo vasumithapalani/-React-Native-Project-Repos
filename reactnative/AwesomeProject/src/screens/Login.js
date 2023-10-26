@@ -13,10 +13,13 @@ const Login = ({navigation}) => {
 const submitFunc=()=>{
 
 
-  if(username==="vasu@gmail.com" && password==="vasu@456")
+  if(username==="vasumitha@gmail.com" && password==="vasu@456")
   {
     alert("Login Successful");
+
+    navigation.navigate('Home', { username });
   }
+
   else
   {
    alert("Login Failed.Please Enter the valid Credentials.")
@@ -26,7 +29,9 @@ const submitFunc=()=>{
 
   return (
     <View style={styles.container1}>
+
       <ImageBackground source={require('../../img1.jpg')} resizeMode="cover">
+
        <View style={styles.container2}>
 
         <Text style={styles.title}>Welcome Back</Text>

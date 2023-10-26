@@ -27,6 +27,7 @@ const submitFunc=()=>{
 
   return (
     <View style={styles.container1}>
+      
       <ImageBackground source={require('../../img2.jpg')} resizeMode="cover">
        
        <View style={styles.container2}>
