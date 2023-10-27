@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { View, Text,TextInput,StyleSheet,TouchableOpacity,Button,ImageBackground,TouchableWithoutFeedback,TouchableHighlight} from 'react-native'
 import {REGISTRATION_PAGE} from '../constant/Navigation';
-
+import {login} from '../screens/authActions'
+import { useDispatch,useSelector } from 'react-redux';
+import authReducer from '../screens/authReducer';
 
 
 const Login = ({navigation}) => {
@@ -9,15 +11,17 @@ const Login = ({navigation}) => {
   const [username,setUsername]=useState('')
   const [password,setPassword]=useState('')
 
-    
-const submitFunc=()=>{
+  const dispatch= useDispatch();
+
+  const isLoggedIn= useSelector(state => state.authReducer.isLoggedIn);
+
+ const submitFunc=()=>{
 
 
   if(username==="vasumitha@gmail.com" && password==="vasu@456")
   {
-    alert("Login Successful");
-
-    navigation.navigate('Home', { username });
+  
+    dispatch(login());
   }
 
   else
@@ -52,14 +56,25 @@ const submitFunc=()=>{
   <TouchableOpacity style={styles.loginbutton} onPress={submitFunc}><Text style={styles.loginbuttontext}>Log In</Text></TouchableOpacity>
   </View>
     
-  
     </View>
 
     </ImageBackground>
     </View>
+
     
   )
 }
+
+
+/*export const mappingStateToProps = (state) => {
+  return {
+    isLoggedIn: state.authReducer.isLoggedIn,
+  };
+};*/
+
+
+
+
 
 /*
 <TouchableOpacity style={styles.loginbutton} onPress={submitFunc}><Text style={styles.loginbuttontext}>Log In</Text></TouchableOpacity>
@@ -140,4 +155,4 @@ const styles = StyleSheet.create({
 
 
 
-export default Login
+  export default Login;

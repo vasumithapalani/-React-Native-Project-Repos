@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import { createSwitchNavigator } from '@react-navigation/compat';
 
 
 import LoginScreen from './src/screens/LoginScreen'
@@ -21,6 +22,8 @@ import FirstPage from './src/screens/FirstPage'
 import ComponentE from './src/screens/ComponentE';
 import ComponentD from './src/screens/ComponentD';
 import ComponentC from './src/screens/ComponentC';
+import LoginStack from './src/screens/LoginStack'
+import DashboardStack from './src/screens/DashboardStack'
 
 
 import {HOME_PAGE} from './src/constant/Navigation';
@@ -32,60 +35,34 @@ import {BOTTOM_TABS} from './src/constant/Navigation';
 import { CounterProvider, useCounter } from './src/screens/CounterContext';
 import { CounterDisplay, CounterControls } from './src/screens/CounterDisplayControls';
 
+import { Provider } from 'react-redux';
+import {store} from './src/screens/reduxstore'
+import RootNavigator from './src/screens/RootNavigator'
+
 const Stack = createNativeStackNavigator();
-export const UserContext=createContext()
 
 
-const FirstComponent=()=>{
-
-  return (
-
-    <SecondComponent/>
-
-  )
-
-}
-
-
-const SecondComponent=()=>{
-
-  const count=useSelector(state=>state.reducer.count)
-
-  return (
-
-    <Text style={{fontSize:30}}>Count: {count}</Text>
-  )
-  
-}
 
 const App = () => {
 
-   const dispatch=useDispatch();
-  
-   const incrementtheValue=()=>{
-      
-    dispatch({
-      
-      type:'increment',
-
-    })
-
-   }
+   
 
   return (
-    <View>
+  
+    <Provider store={store}>
 
-    <FirstComponent/>
+    <NavigationContainer>
+  
+       <RootNavigator/>
 
-    <TouchableOpacity style={styles.button} onPress={incrementtheValue}><Text style={styles.buttontext}>Increment</Text></TouchableOpacity>
-
- </View>
-
+    </NavigationContainer>
+  
+    </Provider>
     
-  )
+  );
   }
 
-
+  
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -119,99 +96,5 @@ buttontext:{
 export default App
 
 
-/*
-Consumer:
-
-export const UserContext=createContext()
-
- 
-    <UserContext.Provider value={'Vasumitha'}>
-      <ComponentC/>
-    </UserContext.Provider>
 
 
-
-Stack Navigation:
-
-    <NavigationContainer>
-    <Stack.Navigator initialRouteName={HOME_PAGE}
-    screenOptions={{
-     headerStyle: {
-       backgroundColor: 'grey',
-     },
-     
-     headerTintColor: '#fff',
-
-     headerTitleStyle: {
-       fontWeight: 'bold',
-     },
-   }} >
-   <Stack.Screen name={HOME_PAGE} component={Home}/>
-    <Stack.Screen name={LOGIN_PAGE} component={Login}/>
-    <Stack.Screen name={REGISTRATION_PAGE} component={Register} initialParams={{id:66}}/>
-    <Stack.Screen name={BOTTOM_TABS} component={MaterialTopTabNav}/>
-    </Stack.Navigator>
-    </NavigationContainer>
-
-
-
-Stack Navigation
-<Stack.Navigator initialRouteName={REGISTRATION_PAGE}
-       screenOptions={{
-        headerStyle: {
-          backgroundColor: 'grey',
-        },
-        
-        headerTintColor: '#fff',
-
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }}
-       >
-       <Stack.Screen name={LOGIN_PAGE} component={Login}  options={{title: ''}}/>
-       <Stack.Screen name={REGISTRATION_PAGE} component={Register} initialParams={{id:66}} options={({route})=>({title:route.params.name})}/>
-       <Stack.Screen name={MY_TABS} component={MyTabs}/>
-       </Stack.Navigator>*/
-
-
-/*
-Provider:
-
-<CounterProvider>
-
-    <View style={styles.container}>
-
-      <CounterDisplay />
-
-      <CounterControls />
-    
-    </View>
-
-  </CounterProvider>
-
-
-Bottom Tab Navigation :
-
-      <NavigationContainer>
-       <Stack.Navigator initialRouteName={HOME_PAGE}
-       screenOptions={{
-        headerStyle: {
-          backgroundColor: 'grey',
-        },
-        
-        headerTintColor: '#fff',
-
-        headerTitleStyle: {
-          fontWeight: 'bold',
-        },
-      }} >
-      <Stack.Screen name={HOME_PAGE} component={Home}/>
-       <Stack.Screen name={LOGIN_PAGE} component={Login}/>
-       <Stack.Screen name={REGISTRATION_PAGE} component={Register} initialParams={{id:66}}/>
-       <Stack.Screen name={BOTTOM_TABS} component={BottomTabNav}/>
-       </Stack.Navigator>
-       </NavigationContainer>
-       
-
-*/ 
