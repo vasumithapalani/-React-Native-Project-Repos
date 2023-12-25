@@ -1,5 +1,65 @@
 
 /*
+in Login:
+
+ const submitFunc=async()=>{
+
+
+  if(username==="vasumitha@gmail.com" && password==="vasu@456")
+  {
+    alert("Login Successful")
+   
+    dispatch(login());
+  }
+
+  else
+  {
+   alert("Login Failed.Please Enter the valid Credentials.")
+  }
+
+}
+
+if (!response.ok) {
+      throw new Error('Invalid credentials');
+    }
+
+
+
+in Register:
+
+<View>
+ <Text>Initial param: itemId - {id}</Text>
+  </View>
+
+
+
+in App :
+
+
+<Provider store={store}>
+
+    <NavigationContainer>
+  
+       <RootNavigator/>
+
+    </NavigationContainer>
+  
+    </Provider>
+
+in home page :
+
+       // const { username } = route.params || {};
+
+     <View>
+          <Text> Welcome, {username}! </Text>
+      </View>
+
+      <View>
+      <Button title="Go to Dashboard" style={styles.cont} onPress={() => navigation.navigate(BOTTOM_TABS)}/>
+      </View>
+
+      
+Stack:
 
 
 <Stack.Navigator initialRouteName={LOGIN_PAGE}>
@@ -142,6 +202,8 @@ Provider:
     </View>
 
   </CounterProvider>
+
+
 
 
 Bottom Tab Navigation :

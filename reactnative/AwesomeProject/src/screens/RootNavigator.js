@@ -13,8 +13,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
 const RootNavigator = () => {
-    // Access the 'isLoggedIn' state from the Redux store
-    const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
+
+  const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
   
     // Use the 'isLoggedIn' state to determine which stack navigator to display
     return isLoggedIn ? <DashboardStack /> : <LoginStack />;

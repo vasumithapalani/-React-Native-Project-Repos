@@ -4,7 +4,7 @@ import {LOGIN_PAGE, MY_TABS} from '../constant/Navigation';
 
 const Register = ({ route, navigation }) => {
 
-  const { id } = route.params;
+  //const { id } = route.params;
 
   const [email,setEmail]=useState('')
   const [password,setPassword]=useState('')
@@ -56,10 +56,6 @@ const submitFunc=()=>{
   <TouchableOpacity style={styles.registerbutton} onPress={submitFunc}><Text style={styles.registerbuttontext}>Register</Text></TouchableOpacity>
   </View>
  
- <View>
- <Text>Initial param: itemId - {id}</Text>
-  </View>
-
   </View>
   </ImageBackground>
     
@@ -124,7 +120,8 @@ const styles = StyleSheet.create({
       padding:5,
       marginTop:28,
       justifyContent: 'center',
-
+      borderStyle: 'solid',
+      borderColor: 'indigo',
     },
   
     registerbuttontext:{
@@ -132,8 +129,6 @@ const styles = StyleSheet.create({
       textAlign:'center',  
       color:'white',
       fontSize:22,
-      borderStyle:'solid',
-      borderColor:'black',
     }
   
   });

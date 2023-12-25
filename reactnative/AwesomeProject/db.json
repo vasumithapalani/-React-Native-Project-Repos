@@ -1,0 +1,50 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "password": "password123",
+      "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "password": "secret456",
+      "email": "jane@example.com"
+    }
+  ],
+  "authenticate": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "password": "password123",
+      "email": "john@example.com",
+      "token": "mockAuthToken123"
+    },
+    {
+      "id": 2,
+      "username": "jane_smith",
+      "password": "secret456",
+      "email": "jane@example.com",
+      "token": "mockAuthToken456"
+    },
+    {
+      "id": 3
+    },
+    {
+      "username": "john_doe",
+      "password": "password123",
+      "id": 4
+    },
+    {
+      "username": "john_doe",
+      "password": "password123",
+      "id": 5
+    },
+    {
+      "username": "john_doe",
+      "password": "password123",
+      "id": 6
+    }
+  ]
+}
